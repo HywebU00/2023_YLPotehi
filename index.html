@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+  <head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>index</title>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- mainJs -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .demo_wrap {
+        max-width: 1000px;
+        margin: 0em auto 1em;
+        padding: 15px 15px 3em;
+        clear: both;
+        background: #fff;
+      }
+
+      .demo_wrap h1 {
+        display: block;
+        margin: 0px auto;
+        max-width: 300px;
+        height: 120px;
+        float: left;
+        margin-right: 1em;
+      }
+
+      @media screen and (max-width: 545px) {
+        .demo_wrap h1 {
+          max-width: 100%;
+          float: none;
+          text-align: center;
+        }
+      }
+
+      .demo_wrap h1 img {
+        width: 300px;
+      }
+
+      .num {
+        width: 12%;
+      }
+
+      body {
+        counter-reset: num;
+      }
+
+      table {
+      }
+
+      table th {
+        color: #555;
+        font-size: 0.813rem;
+        text-align: left;
+        color: #666;
+      }
+
+      table td,
+      table th {
+        border-left: none;
+        border-right: none;
+        padding: 0.4em;
+      }
+
+      table td .gray {
+        color: #808080;
+        font-size: 0.938rem;
+      }
+
+      table td a {
+        display: block;
+      }
+
+      table tr th:first-child {
+        width: 30px;
+      }
+
+      table caption {
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.25em;
+        padding: 0.5em 0;
+        color: #ff5050;
+      }
+
+      tbody tr td:first-child:before {
+        counter-increment: num;
+        display: block;
+        text-align: center;
+        color: #888;
+        font-size: 0.875rem;
+        content: counters(num, '.') ' ';
+      }
+
+      tbody tr td:nth-child(2) {
+        width: 200px;
+      }
+
+      tbody tr td:nth-child(3) {
+        width: 400px;
+      }
+
+      .btnGrp {
+        text-align: right;
+      }
+
+      @media screen and (max-width: 545px) {
+        .btnGrp {
+          text-align: center;
+        }
+      }
+
+      .tableWrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      @media screen and (max-width: 545px) {
+        .tableWrapper {
+          flex-flow: row wrap;
+        }
+
+        .tableWrapper h2 {
+          flex: 1 0 100%;
+          margin-bottom: 1em;
+        }
+      }
+
+      h2 {
+        margin: 0.5em 0 0.25em;
+        font-size: 1rem;
+        line-height: 1.25em;
+        white-space: nowrap;
+      }
+
+      .tableWrapper h2 {
+        flex: 0 0 150px;
+        padding-right: 1em;
+      }
+
+      hr {
+        border-top: 1px dashed #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="demo_wrap">
+      <h1><img src="images/logo.svg" alt="" /></h1>
+      <!-- <div class="btnGrp">
+        <a href="https://github.com/HywebU00/HyUI_v4.0" class="btn">HyUI4.0 download</a>
+      </div> -->
+      <hr />
+      <div class="tableWrapper">
+        <h2>首頁</h2>
+        <!-- hyUI 標準頁面 -->
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>首頁</td>
+              <!-- 連結放到a裡面就好 -->
+              <td><a href="mp.html" target="_blank"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+      <div class="tableWrapper">
+        <h2>內頁</h2>
+        <!-- hyUI 標準頁面 -->
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>CP</td>
+              <td><a href="" target="_blank"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>LP 一般條列</td>
+              <td><a href="" target="_blank"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>LP 展覽條列</td>
+              <td><a href="" target="_blank"></a></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>常見問題</td>
+              <td><a href="" target="_blank"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="tableWrapper">
+        <h2>標準頁面</h2>
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>列表頁-條列</td>
+              <td><a href="lp.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>列表頁-表格</td>
+              <td><a href="lp_table.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>列表頁-相簿</td>
+              <td><a href="lp_album.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>內容頁</td>
+              <td><a href="cp.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>內容頁-照片</td>
+              <td><a href="cp_photo.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>節點頁</td>
+              <td><a href="np.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>轉寄友人</td>
+              <td><a href="fp.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>意見信箱</td>
+              <td><a href="qp.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>網站地圖</td>
+              <td><a href="sitemap.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Google Search頁面</td>
+              <td><a href="gs.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>404 網站錯誤</td>
+              <td><a href="404.html"></a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+      <!-- <hr />
+      <div class="tableWrapper">
+        <h2>特殊頁面+元件</h2>
+        <table>
+          <thead>
+            <tr>
+              <th class="num">編號</th>
+              <th>頁面名稱</th>
+              <th>檔案名稱</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>電子報</td>
+              <td><a href="epaper.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>表單</td>
+              <td><a href="form.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>按鈕樣式</td>
+              <td><a href="btn.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>圖片輪播</td>
+              <td><a href="slider.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>tab 改button</td>
+              <td><a href="tab.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>accordion效果</td>
+              <td><a href="accordion.html"></a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>...</td>
+              <td><a href="..."></a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+    </div>
+    <a href="javascript:;" class="scrollToTop" role="button">回頁首</a>
+    <script>
+      let aName = document.querySelectorAll('tbody a');
+      aName.forEach((i) => {
+        let Link = i.getAttribute('href');
+        i.textContent = Link;
+      });
+    </script>
+  </body>
+</html>
