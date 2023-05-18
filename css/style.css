@@ -3777,6 +3777,15 @@ img {
       height: 42px;
     }
   }
+  @media screen and (max-width: 767px) {
+    .header .multiBar .crlPanel h1 {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    .header .multiBar .crlPanel h1 img {
+      max-height: 60px;
+    }
+  }
   .header .multiBar.Show .btnMenu span {
     background: #222;
   }
@@ -4033,8 +4042,9 @@ img {
     }
   }
   @media screen and (max-width: 767px) {
-    .mainMenuWrap .container {
-      width: 86%;
+    .mainMenuWrap {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
     .mainMenuWrap .crlPanel {
       flex-wrap: wrap;
@@ -6999,9 +7009,6 @@ img {
       flex: 1 1 100%;
     }
   }
-  .col_66.College .col:nth-child(1) {
-    padding-right: 2rem;
-  }
   .col_66.College .col:nth-child(2) {
     display: flex;
     flex-wrap: nowrap;
@@ -7031,11 +7038,15 @@ img {
     height: 640px;
   }
   .col_66.Story .col {
-    overflow: hidden;
     align-self: center;
   }
-  .col_66.Story .col:nth-child(1) {
+  .col_66.College .col:nth-child(1), .col_66.Story .col:nth-child(1) {
     padding-right: 2rem;
+  }
+  @media screen and (max-width: 991px) {
+    .col_66.College .col:nth-child(1), .col_66.Story .col:nth-child(1) {
+      padding-right: 0;
+    }
   }
   .mainInfoWrap {
     max-width: 1440px;
@@ -7768,6 +7779,37 @@ img {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .mp .imgContainer {
+    overflow: hidden;
+  }
+  .mp .imgContainer img {
+    margin-bottom: -5px;
+  }
+  .mp .imgContainer .mask {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #F9F6F2;
+    transform: scaleX(1) translateX(-100%);
+  }
+  @keyframes Revealer {
+    0%, 50% {
+      transform-origin: 0 50%;
+    }
+    60%, 100% {
+      transform-origin: 100% 50%;
+    }
+    60% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
   .goShow {
     background: transparent;
     transition: 0.6s ease;
@@ -7850,6 +7892,11 @@ img {
     max-width: 1440px;
     margin: auto;
   }
+  @media screen and (max-width: 991px) {
+    .mainMenuWrap .container {
+      width: 90%;
+    }
+  }
   ul.communityLink li {
     border-radius: 50%;
     border: 2px solid #000;
@@ -7896,6 +7943,7 @@ img {
     left: 50%;
     top: 50%;
     color: #fff;
+    text-shadow: 0px 0px 60px #000000;
     z-index: 997;
     transform: translate(-50%, -50%);
     font-weight: 500;
@@ -7914,7 +7962,6 @@ img {
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.662745098) 100%);
   }
   #heroImg {
-    background: #729dd1;
     display: flex;
     flex-wrap: nowrap;
   }

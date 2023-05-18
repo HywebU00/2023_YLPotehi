@@ -44,7 +44,7 @@ accordionFunction({
   });
   const heroSwiper = new Swiper(".mySwiper", {
     allowTouchMove: false,
-    autoplay: false,
+    autoplay: true,
     speed: 1200,
     effect: 'fade',
   });
@@ -160,7 +160,7 @@ accordionFunction({
   });
 
   tl.to(cols, {
-    left: '+=100',
+    left: '+=50',
     ease: "power3.out",
     duration: 2
   });
