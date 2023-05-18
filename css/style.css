@@ -7832,6 +7832,13 @@ img {
     height: 1px;
     background: rgba(255, 255, 255, 0.25);
   }
+  .goShow .container a .imgContainer img {
+    transform: scale(1);
+    transition: 0.3s ease;
+  }
+  .goShow .container a:hover img, .goShow .container a:focus img {
+    transform: scale(1.1);
+  }
   .goShow.Change {
     background: #000;
     color: #fff;
@@ -7856,21 +7863,24 @@ img {
   }
   .linkIcon {
     display: flex;
-    padding: 2rem 0;
   }
   .linkIcon .col {
     flex: 1 1 16.6666666667%;
+    position: relative;
+    overflow: hidden;
   }
   .linkIcon .col a {
     display: block;
     text-align: center;
-    padding: 2rem 0;
+    padding: 3.5em 0;
     text-decoration: none;
     color: #444;
     padding-left: initial;
     transition: 0.3s ease;
     font-size: 1.125em;
     line-height: 42px;
+    position: inherit;
+    z-index: 1;
   }
   .linkIcon .col a:hover, .linkIcon .col a:focus-visible {
     color: #3d3d3d;
@@ -7882,6 +7892,19 @@ img {
   }
   .linkIcon .col a i {
     display: block;
+  }
+  .linkIcon .col:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #F9F6F2;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease;
+  }
+  .linkIcon .col:hover:after, .linkIcon .col:focus:after {
+    width: 100%;
   }
   .deco {
     display: flex;
