@@ -1927,11 +1927,11 @@ img {
   .cp blockquote:before {
     content: "";
     position: absolute;
-    background: #000;
-    width: 42px;
-    height: 42px;
-    left: 21px;
-    top: -21px;
+    background: url(../images/icon_quote.svg) 50% 50% no-repeat;
+    width: 60px;
+    height: 60px;
+    left: 30px;
+    top: -30px;
   }
   .cp img {
     max-width: 100%;
@@ -3683,7 +3683,6 @@ img {
     position: fixed;
     z-index: 998;
     width: 100%;
-    background: #F9F6F2;
   }
   .header .container {
     max-width: 100%;
@@ -7931,7 +7930,7 @@ img {
     overflow: hidden;
   }
   ul.communityLink li .iconBack {
-    background: url(../images/icon_FB.svg);
+    background: url(../images/icon_back.svg);
   }
   ul.communityLink li .iconFB {
     background: url(../images/icon_FB.svg);
@@ -7965,7 +7964,7 @@ img {
     background-size: contain;
   }
   ul.communityLink li:hover .iconBack, ul.communityLink li:focus .iconBack {
-    background: url(../images/icon_FB.svg) #fff;
+    background: url(../images/icon_back.svg) #fff;
   }
   ul.communityLink li:hover .iconFB, ul.communityLink li:focus .iconFB {
     background: url(../images/icon_FB.svg) #fff;
@@ -7988,8 +7987,8 @@ img {
   ul.communityLink li:hover .iconCalendarAdd, ul.communityLink li:focus .iconCalendarAdd {
     background: url(../images/icon_calendarAdd.svg) #fff;
   }
-  ul.communityLink li:hover .iconFB, ul.communityLink li:hover .iconIG, ul.communityLink li:hover .iconYT, ul.communityLink li:hover .icoLine,
-  ul.communityLink li:hover .icoPrint, ul.communityLink li:hover .iconMailTo, ul.communityLink li:hover .iconCalendarAdd, ul.communityLink li:focus .iconFB, ul.communityLink li:focus .iconIG, ul.communityLink li:focus .iconYT, ul.communityLink li:focus .icoLine,
+  ul.communityLink li:hover .iconBack, ul.communityLink li:hover .iconFB, ul.communityLink li:hover .iconIG, ul.communityLink li:hover .iconYT, ul.communityLink li:hover .icoLine,
+  ul.communityLink li:hover .icoPrint, ul.communityLink li:hover .iconMailTo, ul.communityLink li:hover .iconCalendarAdd, ul.communityLink li:focus .iconBack, ul.communityLink li:focus .iconFB, ul.communityLink li:focus .iconIG, ul.communityLink li:focus .iconYT, ul.communityLink li:focus .icoLine,
   ul.communityLink li:focus .icoPrint, ul.communityLink li:focus .iconMailTo, ul.communityLink li:focus .iconCalendarAdd {
     filter: invert(1);
     background-position: 50% 50%;
