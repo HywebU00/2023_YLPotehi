@@ -34,43 +34,43 @@ accordionFunction({
 
   // --------------------------------------------- heroImg
   // ★★★ Note ★★★ 偵聽視窗高度，並將高度投入 HTML
-  const heightDisplay = document.getElementById('heroImg');  // 獲取用於顯示高度的HTML元素
-  let currentHeight = window.innerHeight;                    // 獲取當前瀏覽器視窗高度
-  heightDisplay.style.height = `${currentHeight}px`;         // 設置初始高度樣式
-  // 監聽resize事件
-  window.addEventListener('resize', () => {
-    currentHeight = window.innerHeight;                     // 當瀏覽器視窗高度改變時，更新currentHeight
-    heightDisplay.style.height = `${currentHeight}px`;      // 設置高度樣式
-  });
-  const heroSwiper = new Swiper(".mySwiper", {
-    allowTouchMove: false,
-    autoplay: true,
-    speed: 1200,
-    effect: 'fade',
-  });
+  // const heightDisplay = document.getElementById('heroImg');  // 獲取用於顯示高度的HTML元素
+  // let currentHeight = window.innerHeight;                    // 獲取當前瀏覽器視窗高度
+  // heightDisplay.style.height = `${currentHeight}px`;         // 設置初始高度樣式
+  // // 監聽resize事件
+  // window.addEventListener('resize', () => {
+  //   currentHeight = window.innerHeight;                     // 當瀏覽器視窗高度改變時，更新currentHeight
+  //   heightDisplay.style.height = `${currentHeight}px`;      // 設置高度樣式
+  // });
+  // const heroSwiper = new Swiper(".mySwiper", {
+  //   allowTouchMove: false,
+  //   autoplay: true,
+  //   speed: 1200,
+  //   effect: 'fade',
+  // });
 
   // --------------------------------------------- crlPanel scroll visible
   // ★★★ Note ★★★ header 右上角 crlPanel scroll 超過 hero 高度後再顯示
   // ★★★ Note ★★★ header + blur
-  const crlPanel = document.querySelector('.crlPanel');
-  const multiBar = document.querySelector('.multiBar');
-  const header = document.querySelector('.header');
+  // const crlPanel = document.querySelector('.crlPanel');
+  // const multiBar = document.querySelector('.multiBar');
+  // const header = document.querySelector('.header');
 
-  window.addEventListener('scroll', () => {
-    // const scrollY = window.scrollY;   // 取得目前視窗捲動高度
-    currentHeight = window.innerHeight - 36;
-    if (scrollY >= currentHeight) {
-      // crlPanel.style.visibility = 'visible';
-      multiBar.classList.add("Show");
-      header.classList.add("Blur");
-    } else {
-      // crlPanel.style.visibility = 'hidden';
-      multiBar.classList.remove("Show");
-      header.classList.remove("Blur");
-    }
-  });
+  // window.addEventListener('scroll', () => {
+  //   // const scrollY = window.scrollY;   // 取得目前視窗捲動高度
+  //   currentHeight = window.innerHeight - 36;
+  //   if (scrollY >= currentHeight) {
+  //     // crlPanel.style.visibility = 'visible';
+  //     multiBar.classList.add("Show");
+  //     header.classList.add("Blur");
+  //   } else {
+  //     // crlPanel.style.visibility = 'hidden';
+  //     multiBar.classList.remove("Show");
+  //     header.classList.remove("Blur");
+  //   }
+  // });
 
-  // --------------------------------------------- btnMenu
+  // --------------------------------------------- btnMenu（全站共用）
   // ★★★ Note ★★★ 主選單開啟、收合
   // 取得 .btnMenu 和 .mainMenuWrap元素
   const body = document.querySelector('body');
@@ -92,7 +92,7 @@ accordionFunction({
     }
   });
 
-  // --------------------------------------------- btnMenu 手機版開合
+  // --------------------------------------------- btnMenu 手機版開合（全站共用）
   // ★★★ Note ★★★ 手機版、主選單第二層開啟、收合
   const firstMenus = document.querySelectorAll('.menu > ul > li');
 
@@ -113,13 +113,13 @@ accordionFunction({
 
   // --------------------------------------------- btnMenu 各種開啟狀態的調整
   // ★★★ Note ★★★ multiBar Show ＋ mainMenuWrap Show 
-  if (multiBar.classList.contains('Show') && mainMenuWrap.classList.contains('Show')) {
-    btnMenu.classList.add('close');
-  } else {
-    btnMenu.classList.remove('close');
-  }
+  // if (multiBar.classList.contains('Show') && mainMenuWrap.classList.contains('Show')) {
+  //   btnMenu.classList.add('close');
+  // } else {
+  //   btnMenu.classList.remove('close');
+  // }
 
-  // --------------------------------------------- btnSearchOpen
+  // --------------------------------------------- btnSearchOpen（全站共用）
   // ★★★ Note ★★★ 搜尋選單開啟
   // 取得元素
   const webSearch = document.querySelector('.webSearch');
@@ -146,35 +146,35 @@ accordionFunction({
 
   // ---------------------------------------------  College 傳習學院
   // ★★★ Note ★★★ 右側三圖片 隨滑鼠滾動偏移
-  const scrollPic = document.querySelector('.scrollPic');
-  const cols = document.querySelectorAll('.pic img');
+  // const scrollPic = document.querySelector('.scrollPic');
+  // const cols = document.querySelectorAll('.pic img');
 
-  gsap.registerPlugin(ScrollTrigger);
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: scrollPic,
-      start: 'top center',
-      end: 'bottom center',
-      scrub: true
-    }
-  });
+  // gsap.registerPlugin(ScrollTrigger);
+  // const tl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: scrollPic,
+  //     start: 'top center',
+  //     end: 'bottom center',
+  //     scrub: true
+  //   }
+  // });
 
-  tl.to(cols, {
-    left: '+=50',
-    ease: "power3.out",
-    duration: 2
-  });
+  // tl.to(cols, {
+  //   left: '+=50',
+  //   ease: "power3.out",
+  //   duration: 2
+  // });
 
   // ---------------------------------------------  Information 相關資訊
   // ★★★ Note ★★★ scroll 到 .goShow，加入 .Change
-  const goShow = document.querySelector('.goShow');
-  window.addEventListener('scroll', function() {
-    if (goShow.getBoundingClientRect().top <= 0) {
-      goShow.classList.add('Change');
-    } else {
-      goShow.classList.remove('Change');
-    }
-  });
+  // const goShow = document.querySelector('.goShow');
+  // window.addEventListener('scroll', function() {
+  //   if (goShow.getBoundingClientRect().top <= 0) {
+  //     goShow.classList.add('Change');
+  //   } else {
+  //     goShow.classList.remove('Change');
+  //   }
+  // });
 
   // --------------------------------------------- infoSlider
   // 相關資訊 swiper
@@ -210,24 +210,28 @@ accordionFunction({
     slidesPerView: 4,
     spaceBetween: 20,
     loop: false,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
     // 切換點
-    pagination: {
-      el: '.cpSlider .swiperDots',
-      bulletElement: 'button',
-      clickable: true,
-    },
+    // pagination: {
+    //   el: '.cpSlider .swiperDots',
+    //   bulletElement: 'button',
+    //   clickable: true,
+    // },
     // 切換箭頭
-    navigation: {
-      nextEl: '.cpSlider .nextSlider', //自行設定樣式
-      prevEl: '.cpSlider .prevSlider', //自行設定樣式
-      disabledClass: 'swiperArrow-disabled', //不可點選樣式
-    },
+    // navigation: {
+    //   nextEl: '.cpSlider .nextSlider', //自行設定樣式
+    //   prevEl: '.cpSlider .prevSlider', //自行設定樣式
+    //   disabledClass: 'swiperArrow-disabled', //不可點選樣式
+    // },
     breakpoints: {
       100: {
         slidesPerView: 2,
       },
       767: {
-        slidesPerView: 4,
+        slidesPerView: 3,
       },
     },
   });

@@ -1938,7 +1938,7 @@ function langFunction(obj) {
   const nextClass = document.querySelectorAll(obj.swiper.next);
   const prevClass = document.querySelectorAll(obj.swiper.prev);
   const documentHtml = document.querySelector('html');
-  const sidebarCtrlBtn = document.querySelector('.sidebarCtrlBtn');
+  // const sidebarCtrlBtn = document.querySelector('.sidebarCtrlBtn');
   const searchCtrlBtn = document.querySelector('.searchCtrlBtn') || null;
   const webLang = documentHtml.getAttribute('lang');
   if (webLang) {
@@ -2021,28 +2021,28 @@ langFunction({
       prevText: 'previous',
     },
   },
-  mobileBtn: {
-    data: [
-      {
-        lang: 'zh',
-        text: '側欄選單',
-      },
-      //...由此新增其他語系
-    ],
-    //預設語系
-    default: 'SideButton',
-  },
-  searchBtn: {
-    data: [
-      {
-        lang: 'zh',
-        text: '查詢',
-      },
-      //...由此新增其他語系
-    ],
-    //預設語系
-    default: 'Search',
-  },
+  // mobileBtn: {
+  //   data: [
+  //     {
+  //       lang: 'zh',
+  //       text: '側欄選單',
+  //     },
+  //     //...由此新增其他語系
+  //   ],
+  //   //預設語系
+  //   default: 'SideButton',
+  // },
+  // searchBtn: {
+  //   data: [
+  //     {
+  //       lang: 'zh',
+  //       text: '查詢',
+  //     },
+  //     //...由此新增其他語系
+  //   ],
+  //   //預設語系
+  //   default: 'Search',
+  // },
   password: {
     data: [
       {
