@@ -16,59 +16,21 @@ scrollTables('table');  // table捲動功能
 // fontSize();
 
 // 手風琴功能
-accordionFunction({
-  accordion: '.accordion',
-  openFirst: false, // 預設先展開所有內容，使用無障礙遊走不再有手風琴效果，永遠展開內容(滑鼠點擊正常開合)
-  autoClose: true, // 點擊時自動關閉已展開的項目，若需要此功能需要關閉openFirst
-  duration: 200,
-  info: {
-    open: '展開', // 收合時顯示
-    close: '收合', // 展開時顯示
-  },
-});
+// accordionFunction({
+//   accordion: '.accordion',
+//   openFirst: false, // 預設先展開所有內容，使用無障礙遊走不再有手風琴效果，永遠展開內容(滑鼠點擊正常開合)
+//   autoClose: true, // 點擊時自動關閉已展開的項目，若需要此功能需要關閉openFirst
+//   duration: 200,
+//   info: {
+//     open: '展開', // 收合時顯示
+//     close: '收合', // 展開時顯示
+//   },
+// });
 
 // -----  基本功能開關   ---------------------------------------------------
 
 // 自行加入的JS請寫在這裡
 (function () {
-
-  // --------------------------------------------- heroImg
-  // ★★★ Note ★★★ 偵聽視窗高度，並將高度投入 HTML
-  // const heightDisplay = document.getElementById('heroImg');  // 獲取用於顯示高度的HTML元素
-  // let currentHeight = window.innerHeight;                    // 獲取當前瀏覽器視窗高度
-  // heightDisplay.style.height = `${currentHeight}px`;         // 設置初始高度樣式
-  // // 監聽resize事件
-  // window.addEventListener('resize', () => {
-  //   currentHeight = window.innerHeight;                     // 當瀏覽器視窗高度改變時，更新currentHeight
-  //   heightDisplay.style.height = `${currentHeight}px`;      // 設置高度樣式
-  // });
-  // const heroSwiper = new Swiper(".mySwiper", {
-  //   allowTouchMove: false,
-  //   autoplay: true,
-  //   speed: 1200,
-  //   effect: 'fade',
-  // });
-
-  // --------------------------------------------- crlPanel scroll visible
-  // ★★★ Note ★★★ header 右上角 crlPanel scroll 超過 hero 高度後再顯示
-  // ★★★ Note ★★★ header + blur
-  // const crlPanel = document.querySelector('.crlPanel');
-  // const multiBar = document.querySelector('.multiBar');
-  // const header = document.querySelector('.header');
-
-  // window.addEventListener('scroll', () => {
-  //   // const scrollY = window.scrollY;   // 取得目前視窗捲動高度
-  //   currentHeight = window.innerHeight - 36;
-  //   if (scrollY >= currentHeight) {
-  //     // crlPanel.style.visibility = 'visible';
-  //     multiBar.classList.add("Show");
-  //     header.classList.add("Blur");
-  //   } else {
-  //     // crlPanel.style.visibility = 'hidden';
-  //     multiBar.classList.remove("Show");
-  //     header.classList.remove("Blur");
-  //   }
-  // });
 
   // --------------------------------------------- btnMenu（全站共用）
   // ★★★ Note ★★★ 主選單開啟、收合
@@ -111,14 +73,6 @@ accordionFunction({
     });
   }
 
-  // --------------------------------------------- btnMenu 各種開啟狀態的調整
-  // ★★★ Note ★★★ multiBar Show ＋ mainMenuWrap Show 
-  // if (multiBar.classList.contains('Show') && mainMenuWrap.classList.contains('Show')) {
-  //   btnMenu.classList.add('close');
-  // } else {
-  //   btnMenu.classList.remove('close');
-  // }
-
   // --------------------------------------------- btnSearchOpen（全站共用）
   // ★★★ Note ★★★ 搜尋選單開啟
   // 取得元素
@@ -143,38 +97,49 @@ accordionFunction({
     body.classList.remove('noscroll');
   });
 
+  // --------------------------------------------- 條件搜尋
+  // ★★★ Note ★★★ 切換 filter
+  // 取得元素
+  const btnFilter = document.querySelector('.iconFilter');
+  const filterBox = document.querySelector('.filterBox');
+  // 點擊 .btnMenu 觸發事件
+  btnFilter.addEventListener('click', function() {
+    const target = btnFilter;
+    // 如果 .filterBox 內有 .Show，則移除
+    if (target.classList.contains('act')) {
+      target.classList.remove('act');
+      filterBox.classList.remove('Show');
+      body.classList.remove('noscroll');
+    } else {
+      // 如果 .filterBox 內沒有 .Show，則新增
+      target.classList.add('act');
+      filterBox.classList.add('Show');
+      body.classList.add('noscroll');
+    }
+  });
 
-  // ---------------------------------------------  College 傳習學院
-  // ★★★ Note ★★★ 右側三圖片 隨滑鼠滾動偏移
-  // const scrollPic = document.querySelector('.scrollPic');
-  // const cols = document.querySelectorAll('.pic img');
+  // --------------------------------------------- accordion 手風琴
+  // ★★★ Note ★★★ 
+  // 獲取所有手風琴項目
+  var accordionLi = document.querySelectorAll('.accordion li');
+  // 添加點擊事件監聽器
+  accordionLi.forEach(function(item) {
+    var header = item.querySelector('.accordionList');
+    var content = item.querySelector('.accordionContent');
 
-  // gsap.registerPlugin(ScrollTrigger);
-  // const tl = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: scrollPic,
-  //     start: 'top center',
-  //     end: 'bottom center',
-  //     scrub: true
-  //   }
-  // });
+    header.addEventListener('click', function() {
+      // 切換手風琴項目的 active 狀態
+      item.classList.toggle('active');
 
-  // tl.to(cols, {
-  //   left: '+=50',
-  //   ease: "power3.out",
-  //   duration: 2
-  // });
+      // 切換手風琴內容的顯示狀態
+      if (item.classList.contains('active')) {
+        content.classList.add('Show');
+      } else {
+        content.classList.remove('Show');
+      }
+    });
+  });
 
-  // ---------------------------------------------  Information 相關資訊
-  // ★★★ Note ★★★ scroll 到 .goShow，加入 .Change
-  // const goShow = document.querySelector('.goShow');
-  // window.addEventListener('scroll', function() {
-  //   if (goShow.getBoundingClientRect().top <= 0) {
-  //     goShow.classList.add('Change');
-  //   } else {
-  //     goShow.classList.remove('Change');
-  //   }
-  // });
 
   // --------------------------------------------- infoSlider
   // 相關資訊 swiper
