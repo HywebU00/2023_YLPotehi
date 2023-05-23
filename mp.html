@@ -612,22 +612,5 @@
     <!-- js -->
     <script src="js/customize.js"></script>
     <script src="js/customize-mp.js"></script>
-    <script>
-      // scrollReveal
-      const sr = ScrollReveal();
-      document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
-        sr.reveal(el, {
-          beforeReveal: (el) => {
-            gsap.to(el, {
-              // duration: 1.2,
-              animationName: "Revealer",
-              animationDuration: ".8s",
-              animationTimingFunction: "ease",
-              animationDelay: ".5s",
-            });
-          },
-        });
-      });
-    </script>
   </body>
 </html>

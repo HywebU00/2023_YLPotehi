@@ -97,6 +97,22 @@ scrollTables('table');  // table捲動功能
     body.classList.remove('noscroll');
   });
 
+  // --------------------------------------------- scrollReveal 圖片進場 mask 刷過
+  const sr = ScrollReveal();
+  document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
+    sr.reveal(el, {
+      beforeReveal: (el) => {
+        gsap.to(el, {
+          // duration: 1.2,
+          animationName: "Revealer",
+          animationDuration: ".8s",
+          animationTimingFunction: "ease",
+          animationDelay: ".5s",
+        });
+      },
+    });
+  });
+
   // --------------------------------------------- 條件搜尋
   // ★★★ Note ★★★ 切換 filter
   // 取得元素
@@ -139,7 +155,6 @@ scrollTables('table');  // table捲動功能
       }
     });
   });
-
 
   // --------------------------------------------- infoSlider
   // 相關資訊 swiper

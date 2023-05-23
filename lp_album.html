@@ -213,7 +213,7 @@
               <!-- category -->
               <div class="category">
                 <ul>
-                  <li><a href="#">標籤1</a></li>
+                  <li><a href="#" class="act">標籤1</a></li>
                   <li><a href="#">標籤2</a></li>
                   <li><a href="#">標籤3</a></li>
                   <li><a href="#">標籤4</a></li>
@@ -491,22 +491,5 @@
     <script src="js/mainPotehi.js"></script>
     <!-- js -->
     <script src="js/customize.js"></script>
-    <script>
-      // scrollReveal
-      const sr = ScrollReveal();
-      document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
-        sr.reveal(el, {
-          beforeReveal: (el) => {
-            gsap.to(el, {
-              // duration: 1.2,
-              animationName: "Revealer",
-              animationDuration: ".8s",
-              animationTimingFunction: "ease",
-              animationDelay: ".5s",
-            });
-          },
-        });
-      });
-    </script>
   </body>
 </html>
