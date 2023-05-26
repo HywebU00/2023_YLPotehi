@@ -6955,7 +6955,6 @@ img {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     white-space: pre-wrap;
-    height: 96px;
   }
   .mp .mainInfoWrap time,
   .mp .infoSlider time {
@@ -6965,6 +6964,9 @@ img {
   .mp .infoSlider time + b {
     display: block;
     letter-spacing: 0.1em;
+  }
+  .mp .infoSlider h4 {
+    height: 96px;
   }
   .mp .infoSlider .swiper-slide .title {
     height: 200px;
