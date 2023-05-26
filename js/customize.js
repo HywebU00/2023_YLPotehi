@@ -116,22 +116,8 @@ scrollTables('table');  // table捲動功能
   });
 
   // --------------------------------------------- scrollReveal 圖片進場 mask 刷過
-  // const sr = ScrollReveal();
-  // document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
-  //   sr.reveal(el, {
-  //     beforeReveal: (el) => {
-  //       gsap.to(el, {
-  //         // duration: 1.2,
-  //         animationName: "Revealer",
-  //         animationDuration: ".8s",
-  //         animationTimingFunction: "ease",
-  //         animationDelay: ".5s",
-  //       });
-  //     },
-  //   });
-  // });
   const sr = ScrollReveal();
-  sr.reveal('.imgContainer', {
+  sr.reveal('.col .imgContainer , .mainInfo .imgContainer , .infoSlider .imgContainer', {
     beforeReveal: (el) => {
       el.classList.add('mask');
     },
