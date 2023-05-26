@@ -6881,16 +6881,14 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.462745098);
   }
   .cursor:after {
-    content: "";
+    content: "MORE";
     position: absolute;
-    width: 0;
-    height: 0;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     transform-origin: center;
-    border-radius: 50%;
-    background: #fff;
+    color: #fff;
+    font-size: 0;
   }
   .cursor.Into {
     width: 90px;
@@ -6898,8 +6896,7 @@ img {
     opacity: 1;
   }
   .cursor.Into:after {
-    width: 6px;
-    height: 6px;
+    font-size: 90%;
   }
   .wrapper {
     width: 100%;

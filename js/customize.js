@@ -34,14 +34,14 @@ scrollTables('table');  // table捲動功能
 
   // --------------------------------------------- cursor 滑鼠動態
   const cursor = document.querySelector('.cursor');
-  const links = document.querySelectorAll('a');
+  const linkDeco = document.querySelectorAll('.mainInfo a , .swiperBox a');
 
   document.addEventListener('mousemove', function(e){
     var x = e.clientX;
     var y = e.clientY;
     cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
   });
-  links.forEach(function(col) {
+  linkDeco.forEach(function(col) {
     col.addEventListener('mouseenter', function() {
       cursor.classList.add('Into');
     });
