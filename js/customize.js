@@ -32,6 +32,24 @@ scrollTables('table');  // table捲動功能
 // 自行加入的JS請寫在這裡
 (function () {
 
+  // --------------------------------------------- cursor 滑鼠動態
+  const cursor = document.querySelector('.cursor');
+  const links = document.querySelectorAll('a');
+
+  document.addEventListener('mousemove', function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+    cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+  });
+  links.forEach(function(col) {
+    col.addEventListener('mouseenter', function() {
+      cursor.classList.add('Into');
+    });
+    col.addEventListener('mouseleave', function() {
+      cursor.classList.remove('Into');
+    });
+  });
+
   // --------------------------------------------- btnMenu（全站共用）
   // ★★★ Note ★★★ 主選單開啟、收合
   // 取得 .btnMenu 和 .mainMenuWrap元素

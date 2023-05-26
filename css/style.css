@@ -4019,7 +4019,7 @@ img {
     transition: 0.3s;
   }
   .mainMenuWrap ul.communityLink li:hover, .mainMenuWrap ul.communityLink li:focus {
-    filter: invert(0);
+    filter: invert(1);
   }
   @media screen and (max-width: 991px) {
     .mainMenuWrap {
@@ -6865,6 +6865,42 @@ img {
     border-radius: 0;
     background: rgba(0, 0, 0, 0.1);
   }
+  .cursor {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 10000;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform-origin: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.2s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.462745098);
+  }
+  .cursor:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .cursor.Into {
+    width: 90px;
+    height: 90px;
+    opacity: 1;
+  }
+  .cursor.Into:after {
+    width: 6px;
+    height: 6px;
+  }
   .wrapper {
     width: 100%;
     margin: 0px auto;
@@ -7891,6 +7927,8 @@ img {
   }
   .linkIcon .col {
     flex: 1 1 16.6666666667%;
+    -webkit-backdrop-filter: blur(0);
+            backdrop-filter: blur(0);
     position: relative;
     overflow: hidden;
   }
@@ -7912,16 +7950,18 @@ img {
     position: absolute;
     width: 0;
     height: 100%;
-    background: #c9ae89;
+    background: rgba(0, 0, 0, 0.85);
     left: 0;
     top: 0;
+    opacity: 0.5;
     transition: 0.3s ease;
   }
-  .linkIcon .col:hover a, .linkIcon .col:focus a {
-    color: #444;
+  .linkIcon .col:hover, .linkIcon .col:focus {
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
   }
-  .linkIcon .col:hover a i, .linkIcon .col:focus a i {
-    filter: invert(0);
+  .linkIcon .col:hover a:hover img, .linkIcon .col:hover a:focus img, .linkIcon .col:focus a:hover img, .linkIcon .col:focus a:focus img {
+    transform: scale(1) !important;
   }
   .linkIcon .col:hover:after, .linkIcon .col:focus:after {
     width: 100%;
