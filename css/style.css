@@ -2322,10 +2322,10 @@ img {
   .webSearch .searchWrap .formGrp .btn,
   .webSearch .searchWrap .formGrp .btnSearch {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 1px;
+    bottom: 1px;
     margin: 0;
-    height: 58px;
+    height: 57px;
     width: 90px;
     border-radius: 0 3px 3px 0;
     font-size: 0;
@@ -7857,7 +7857,12 @@ img {
     -webkit-backdrop-filter: blur(0);
             backdrop-filter: blur(0);
   }
-  .mask {
+  .imgContainer.mask {
+    position: relative;
+    overflow: hidden;
+  }
+  .imgContainer.mask:before {
+    content: "";
     position: absolute;
     height: 100%;
     top: 0;
@@ -7867,6 +7872,7 @@ img {
     z-index: 10;
     background: #F9F6F2;
     transform: scaleX(1) translateX(-101%);
+    animation: Revealer 0.8s ease 0.5s;
   }
   @keyframes Revealer {
     0%, 50% {

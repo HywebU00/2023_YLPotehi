@@ -34,7 +34,7 @@ scrollTables('table');  // table捲動功能
 
   // --------------------------------------------- cursor 滑鼠動態
   const cursor = document.querySelector('.cursor');
-  const linkDeco = document.querySelectorAll('.mainInfo a , .swiperBox a');
+  const linkDeco = document.querySelectorAll('.mainInfo a , .swiperBox a , .thumbnail .col a');
 
   document.addEventListener('mousemove', function(e){
     var x = e.clientX;
@@ -116,19 +116,25 @@ scrollTables('table');  // table捲動功能
   });
 
   // --------------------------------------------- scrollReveal 圖片進場 mask 刷過
+  // const sr = ScrollReveal();
+  // document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
+  //   sr.reveal(el, {
+  //     beforeReveal: (el) => {
+  //       gsap.to(el, {
+  //         // duration: 1.2,
+  //         animationName: "Revealer",
+  //         animationDuration: ".8s",
+  //         animationTimingFunction: "ease",
+  //         animationDelay: ".5s",
+  //       });
+  //     },
+  //   });
+  // });
   const sr = ScrollReveal();
-  document.querySelectorAll(".imgContainer > .mask").forEach((el) => {
-    sr.reveal(el, {
-      beforeReveal: (el) => {
-        gsap.to(el, {
-          // duration: 1.2,
-          animationName: "Revealer",
-          animationDuration: ".8s",
-          animationTimingFunction: "ease",
-          animationDelay: ".5s",
-        });
-      },
-    });
+  sr.reveal('.imgContainer', {
+    beforeReveal: (el) => {
+      el.classList.add('mask');
+    },
   });
 
   // --------------------------------------------- 條件搜尋
