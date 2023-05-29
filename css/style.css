@@ -4032,6 +4032,9 @@ img {
     .mainMenuWrap .crlPanel .navigation {
       visibility: visible;
     }
+    .mainMenuWrap .crlPanel .navigation ul li a:hover, .mainMenuWrap .crlPanel .navigation ul li a:focus, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible {
+      background: red;
+    }
   }
   @media screen and (max-width: 767px) {
     .mainMenuWrap {
