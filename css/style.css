@@ -3879,12 +3879,6 @@ img {
   .mainMenuWrap .crlPanel .navigation ul li:last-child:before {
     display: none;
   }
-  .mainMenuWrap .crlPanel .navigation ul li a img {
-    filter: invert(1);
-  }
-  .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus img, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible img {
-    filter: invert(0);
-  }
   .mainMenuWrap .mainMenu {
     box-sizing: border-box;
     position: relative;
@@ -7007,7 +7001,7 @@ img {
   @media screen and (max-width: 991px) {
     .mp h3.mainTitle {
       display: block;
-      font-size: 4.5em;
+      font-size: 3.6em;
     }
   }
   .showType {
