@@ -3882,7 +3882,7 @@ img {
   .mainMenuWrap .crlPanel .navigation ul li a img {
     filter: invert(1);
   }
-  .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus img {
+  .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus img, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible img {
     filter: invert(0);
   }
   .mainMenuWrap .mainMenu {
@@ -8042,6 +8042,8 @@ img {
     display: block;
     width: 60px;
     height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
     font-size: 0;
     background-position: 50% 50%;
     background-repeat: no-repeat;
