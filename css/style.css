@@ -4069,12 +4069,14 @@ img {
   footer a {
     display: block;
     text-decoration: none;
+    text-align: center;
   }
   footer .infoBox .footerLink {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: center;
     margin-top: 20px;
   }
   footer .infoBox .footerLink li {
@@ -4097,12 +4099,12 @@ img {
       flex-flow: row wrap;
     }
     footer .infoBox .footerLink li {
-      flex: 1 1 25%;
+      flex: 1 1 100%;
     }
   }
   footer .infoBox .Copyright {
-    margin: 0;
-    padding: 0 1em;
+    margin: 1.25em 0;
+    padding: 0 1.5em;
   }
   footer .footerInfo {
     align-self: flex-end;
@@ -4123,11 +4125,19 @@ img {
     footer .container {
       flex-wrap: wrap;
     }
+    footer .container .infoBox,
+    footer .container .footerInfo {
+      flex: 1 1 100%;
+    }
     footer .container .infoBox {
       margin-bottom: 2em;
     }
     footer .container .infoBox .Copyright {
-      padding: 0 1.5em;
+      padding: 3em 1.5em 0;
+      text-align: center;
+    }
+    footer .container .footerInfo ul.communityLink {
+      justify-content: center;
     }
   }
   .fatFooter {
@@ -8716,6 +8726,21 @@ img {
   .actInfo h4:before {
     left: 50%;
     transform: translateX(-50%);
+  }
+  .actInfo + ul.communityLink li {
+    margin: 0 2px;
+  }
+  @media screen and (max-width: 767px) {
+    .actInfo .col {
+      flex: 1 1 100%;
+    }
+    .actInfo .col:nth-child(2):before {
+      width: 50%;
+      height: 1px;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
   }
   .cp .pic {
     float: left;
