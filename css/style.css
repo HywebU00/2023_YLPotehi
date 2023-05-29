@@ -6898,6 +6898,11 @@ img {
   .cursor.Into:after {
     font-size: 90%;
   }
+  @media screen and (max-width: 991px) {
+    .cursor {
+      display: none;
+    }
+  }
   .wrapper {
     width: 100%;
     margin: 0px auto;
