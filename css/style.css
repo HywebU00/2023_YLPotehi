@@ -4032,6 +4032,9 @@ img {
     .mainMenuWrap .crlPanel .navigation {
       visibility: visible;
     }
+    .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible img {
+      filter: invert(0);
+    }
   }
   @media screen and (max-width: 767px) {
     .mainMenuWrap {
@@ -4043,6 +4046,9 @@ img {
     }
     .mainMenuWrap .crlPanel h1, .mainMenuWrap .crlPanel .navigation {
       flex: 1 1 100%;
+    }
+    .mainMenuWrap .crlPanel h1 {
+      margin-bottom: 0.5em;
     }
     .mainMenuWrap .crlPanel h1 img {
       transform: scale(0.9);
@@ -4056,7 +4062,7 @@ img {
       padding: 16px;
     }
     .mainMenuWrap .mainMenu {
-      margin: 0 0 1.5em;
+      margin: 0;
       height: 300px;
     }
   }
@@ -8028,6 +8034,9 @@ img {
     .mainMenuWrap .container {
       width: 90%;
       margin: 80px auto 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
   ul.communityLink li {
