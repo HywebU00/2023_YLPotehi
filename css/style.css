@@ -3640,6 +3640,9 @@ img {
   .crlPanel .navigation ul li a img {
     flex: 0 0 32px;
   }
+  .crlPanel .navigation ul li a:hover, .crlPanel .navigation ul li a:focus, .crlPanel .navigation ul li a:focus-visible {
+    background: #e2ded7;
+  }
   .crlPanel .navigation ul li:before {
     content: "";
     position: absolute;
@@ -3649,10 +3652,7 @@ img {
     top: 26px;
     right: -1px;
   }
-  .crlPanel .navigation ul li:hover a {
-    background: #e2ded7;
-  }
-  .crlPanel .navigation ul li:hover:before {
+  .crlPanel .navigation ul li:hover:before, .crlPanel .navigation ul li:focus:before {
     background: transparent;
   }
   .header {
@@ -6982,10 +6982,11 @@ img {
     margin: 2em 0;
   }
   .showType > div {
-    flex: 0 0 auto;
     align-self: center;
   }
   .showType .Exhibit, .showType .Programme, .showType .Activity {
+    flex: 1 0 auto;
+    max-width: 72px;
     display: block;
     width: 72px;
     height: 72px;
@@ -7005,6 +7006,7 @@ img {
   }
   .showType .info {
     margin-left: 1em;
+    word-break: break-all;
   }
   .filterBox {
     position: absolute;
