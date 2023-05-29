@@ -3643,6 +3643,9 @@ img {
   .crlPanel .navigation ul li a:hover, .crlPanel .navigation ul li a:focus, .crlPanel .navigation ul li a:focus-visible {
     background: #e2ded7;
   }
+  .crlPanel .navigation ul li a:hover img, .crlPanel .navigation ul li a:focus img, .crlPanel .navigation ul li a:focus-visible img {
+    filter: invert(0);
+  }
   .crlPanel .navigation ul li:before {
     content: "";
     position: absolute;
@@ -4032,9 +4035,6 @@ img {
     .mainMenuWrap .crlPanel .navigation {
       visibility: visible;
     }
-    .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible img {
-      filter: invert(0);
-    }
   }
   @media screen and (max-width: 767px) {
     .mainMenuWrap {
@@ -4062,7 +4062,7 @@ img {
       padding: 16px;
     }
     .mainMenuWrap .mainMenu {
-      margin: 0;
+      margin: 0 0 1em;
       height: 300px;
     }
   }
@@ -8034,9 +8034,6 @@ img {
     .mainMenuWrap .container {
       width: 90%;
       margin: 80px auto 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
   }
   ul.communityLink li {
