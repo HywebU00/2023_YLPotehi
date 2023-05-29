@@ -3879,10 +3879,10 @@ img {
   .mainMenuWrap .crlPanel .navigation ul li:last-child:before {
     display: none;
   }
-  .mainMenuWrap .crlPanel .navigation ul li a img {
+  .mainMenuWrap .crlPanel .navigation ul li a {
     filter: invert(1);
   }
-  .mainMenuWrap .crlPanel .navigation ul li a:hover img, .mainMenuWrap .crlPanel .navigation ul li a:focus img, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible img {
+  .mainMenuWrap .crlPanel .navigation ul li a:hover, .mainMenuWrap .crlPanel .navigation ul li a:focus, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible {
     filter: invert(0);
   }
   .mainMenuWrap .mainMenu {
@@ -4031,9 +4031,6 @@ img {
     }
     .mainMenuWrap .crlPanel .navigation {
       visibility: visible;
-    }
-    .mainMenuWrap .crlPanel .navigation ul li a:hover, .mainMenuWrap .crlPanel .navigation ul li a:focus, .mainMenuWrap .crlPanel .navigation ul li a:focus-visible {
-      background: red;
     }
   }
   @media screen and (max-width: 767px) {
