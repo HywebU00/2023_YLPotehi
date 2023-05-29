@@ -118,6 +118,9 @@ scrollTables('table');  // table捲動功能
   // --------------------------------------------- scrollReveal 圖片進場 mask 刷過
   const sr = ScrollReveal();
   sr.reveal('.col .imgContainer , .mainInfo .imgContainer , .infoSlider .imgContainer', {
+    opacity: 1,
+    duration: 800,
+    easing: 'ease',
     beforeReveal: (el) => {
       el.classList.add('mask');
     },
