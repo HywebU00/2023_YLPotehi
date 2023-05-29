@@ -3643,9 +3643,6 @@ img {
   .crlPanel .navigation ul li a:hover, .crlPanel .navigation ul li a:focus, .crlPanel .navigation ul li a:focus-visible {
     background: #e2ded7;
   }
-  .crlPanel .navigation ul li a:hover img, .crlPanel .navigation ul li a:focus img, .crlPanel .navigation ul li a:focus-visible img {
-    filter: invert(0);
-  }
   .crlPanel .navigation ul li:before {
     content: "";
     position: absolute;
