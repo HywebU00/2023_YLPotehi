@@ -86,6 +86,7 @@
     slidesPerView: 3.5,
     spaceBetween: 20,
     loop: false,
+    navigation: false,
     scrollbar: {
       el: '.swiper-scrollbar',
       draggable: true,
