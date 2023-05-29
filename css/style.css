@@ -6959,7 +6959,7 @@ img {
   }
   .mp h3.mainTitle {
     font-weight: 100;
-    font-size: 100px;
+    font-size: 6.25em;
     line-height: 145px;
     display: inline-block;
     text-align: center;
@@ -7007,6 +7007,7 @@ img {
   @media screen and (max-width: 991px) {
     .mp h3.mainTitle {
       display: block;
+      font-size: 4.5em;
     }
   }
   .showType {
