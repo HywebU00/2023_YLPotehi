@@ -4021,6 +4021,9 @@ img {
   .mainMenuWrap ul.communityLink li:hover, .mainMenuWrap ul.communityLink li:focus {
     filter: invert(1);
   }
+  .mainMenuWrap ul.communityLink li:focus-visible {
+    filter: invert(0);
+  }
   @media screen and (max-width: 991px) {
     .mainMenuWrap {
       -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -4038,12 +4041,23 @@ img {
     .mainMenuWrap .crlPanel {
       flex-wrap: wrap;
     }
-    .mainMenuWrap .crlPanel h1,
-    .mainMenuWrap .crlPanel .navigation {
+    .mainMenuWrap .crlPanel h1, .mainMenuWrap .crlPanel .navigation {
       flex: 1 1 100%;
     }
-    .mainMenuWrap .crlPanel h1 {
-      margin-bottom: 1em;
+    .mainMenuWrap .crlPanel h1 img {
+      transform: scale(0.9);
+    }
+    .mainMenuWrap .crlPanel .navigation ul li:before {
+      top: 20px;
+    }
+    .mainMenuWrap .crlPanel .navigation ul li a {
+      width: 60px;
+      height: 60px;
+      padding: 16px;
+    }
+    .mainMenuWrap .mainMenu {
+      margin: 0 0 1.5em;
+      height: 300px;
     }
   }
   .mainMenuWrap.Show {
@@ -8013,6 +8027,7 @@ img {
   @media screen and (max-width: 991px) {
     .mainMenuWrap .container {
       width: 90%;
+      margin: 80px auto 20px;
     }
   }
   ul.communityLink li {
