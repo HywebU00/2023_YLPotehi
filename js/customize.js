@@ -117,14 +117,27 @@ scrollTables('table');  // table捲動功能
 
   // --------------------------------------------- scrollReveal 圖片進場 mask 刷過
   const sr = ScrollReveal();
-  sr.reveal('.col .imgContainer , .mainInfo .imgContainer , .infoSlider .imgContainer', {
-    opacity: 1,
-    duration: 800,
-    easing: 'ease',
+  sr.reveal('.col .imgContainer , .mainInfo .imgContainer', {
     beforeReveal: (el) => {
       el.classList.add('mask');
-    },
+    }
   });
+
+  // 選取前 3 張圖片，加入 .mask 類別
+  // const imgContainers = document.querySelectorAll('.infoSlider .imgContainer');
+  // for (let i = 0; i < imgContainers.length; i++) {
+  //   if (i < 4) {
+  //     sr.reveal(imgContainers[i], {
+  //       beforeReveal: (el) => {
+  //         el.classList.add('mask');
+  //       }
+  //     });
+  //   } else {
+  //     imgContainers[i].style.opacity = 1;
+  //   }
+  // }
+
+
 
   // --------------------------------------------- 條件搜尋
   // ★★★ Note ★★★ 切換 filter
