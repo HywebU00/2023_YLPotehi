@@ -84,7 +84,7 @@
   // 相關資訊 swiper
   const infoSlider = new Swiper('.infoSlider .swiper', {
     slidesPerView: 3.5,
-    spaceBetween: 20,
+    spaceBetween: 40,
     loop: false,
     navigation: false,
     scrollbar: {
