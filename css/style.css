@@ -7933,13 +7933,6 @@ img {
     background-size: cover;
     background-attachment: fixed;
   }
-  .goShow .container a .imgContainer img {
-    transform: scale(1);
-    transition: 0.3s ease;
-  }
-  .goShow .container a:hover img, .goShow .container a:focus img {
-    transform: scale(1.1);
-  }
   .goShow.Change {
     background: #000;
     color: #fff;
