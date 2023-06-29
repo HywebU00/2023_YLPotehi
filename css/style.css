@@ -7937,9 +7937,6 @@ img {
     transform: scale(1);
     transition: 0.3s ease;
   }
-  .goShow .container a:hover, .goShow .container a:focus, .goShow .container a:focus-visible {
-    padding-left: 0;
-  }
   .goShow .container a:hover img, .goShow .container a:focus img, .goShow .container a:focus-visible img {
     transform: scale(1.1);
   }
