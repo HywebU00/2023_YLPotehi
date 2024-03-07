@@ -91,6 +91,55 @@ scrollTables('table');  // table捲動功能
     });
   }
 
+  // -----------------------------------------------------------------------
+  // -----  gotoCenter on focus跳到 content   ------------------------------
+  // -----------------------------------------------------------------------
+  function gotoCenter() {
+    const goCenterTag = document.querySelector('a.goCenter');
+    const acTag = document.querySelector('#aC');
+    // const mainAccessKey = document.querySelector('.main .accessKey');
+    // const headerHeight = document.querySelector('.header').offsetHeight;
+    //  .accessKey 到top 的距離等於 header + .accessKey到父層上方的距離
+    // let distance = headerHeight + mainAccessKey?.offsetTop;
+    if (goCenterTag) {
+      goCenterTag.addEventListener('keydown', (e) => {
+        if (e.which === 13) {
+          acTag.focus();
+          window.scrollTo({
+            top: currentHeight,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+      });
+    }
+  }
+  gotoCenter();
+
+  // --------------------------------------------- multiBar 導盲磚 focus時，crlPanel add .Show
+  const multiBarElement = document.querySelector('.multiBar');
+  const mainMenuWrapElement = document.querySelector('.mainMenuWrap');
+  const communityLinkElement = document.querySelector('.communityLink');
+  const btnMenuElement = document.querySelector('.btnMenu');
+  const lastLinkInCommunityLink = communityLinkElement.querySelector('li:last-child a');
+  
+  document.addEventListener('keydown', function(event) {
+    // 检查键盘事件的键码是否是 Tab 键
+    if (event.key === 'Tab') {
+      // 如果焦点在 .communityLink 范围内
+      if (communityLinkElement.contains(document.activeElement)) {
+        // 如果焦点在 .communityLink 的最后一个 li a 上，移除 .Show 类
+        if (document.activeElement === lastLinkInCommunityLink) {
+          mainMenuWrapElement.classList.remove('Show');
+          btnMenuElement.classList.remove('White','Close');
+        } else {
+          // 否则保持 .Show 类
+          mainMenuWrapElement.classList.add('Show');
+        }
+      }
+    }
+  });
+
   // --------------------------------------------- btnSearchOpen（全站共用）
   // ★★★ Note ★★★ 搜尋選單開啟
   // 取得元素
@@ -160,6 +209,28 @@ scrollTables('table');  // table捲動功能
       target.classList.add('act');
       filterBox.classList.add('Show');
       body.classList.add('noscroll');
+    }
+  });
+
+  // 跳出範圍＋關閉
+  var btnGrpElement = document.querySelector('.btnGrp');
+  var lastButtonInBtnGrp = btnGrpElement.querySelector('button:last-child');
+  var iconFilterElement = document.querySelector('.iconFilter');
+  var filterBoxElement = document.querySelector('.filterBox');
+  var bodyElement = document.body;
+
+  document.addEventListener('keydown', function(event) {
+    // 检查键盘事件的键码是否是 Tab 键
+    if (event.key === 'Tab') {
+      // 如果焦点在 .btnGrp 范围内
+      if (btnGrpElement.contains(document.activeElement)) {
+        // 如果焦点在 .btnGrp 的最后一个 button 上，移除 .Show 类
+        if (document.activeElement === lastButtonInBtnGrp) {
+          filterBoxElement.classList.remove('Show');
+          iconFilterElement.classList.remove('act');
+          bodyElement.classList.remove('noscroll');
+        }
+      }
     }
   });
 

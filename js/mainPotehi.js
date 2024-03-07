@@ -1455,23 +1455,23 @@ addFile();
 // }
 // categoryActive();
 
-// -----------------------------------------------------------------------
-// -----  gotoCenter on focus跳到 content   ------------------------------
-// -----------------------------------------------------------------------
+// // -----------------------------------------------------------------------
+// // -----  gotoCenter on focus跳到 content   ------------------------------
+// // -----------------------------------------------------------------------
 
 // function gotoCenter() {
 //   const goCenterTag = document.querySelector('a.goCenter');
 //   const acTag = document.querySelector('#aC');
-//   // const mainaccessKey = document.querySelector('.main .accessKey');
+//   const mainAccessKey = document.querySelector('.main .accessKey');
 //   const headerHeight = document.querySelector('.header').offsetHeight;
-//   // --- .accessKey 到top 的距離等於 header + .accessKey到父層上方的距離
-//   // let _distance = headerHeight + mainaccessKey.offsetTop;
+//   //  .accessKey 到top 的距離等於 header + .accessKey到父層上方的距離
+//   let distance = headerHeight + mainAccessKey?.offsetTop;
 //   if (goCenterTag) {
 //     goCenterTag.addEventListener('keydown', (e) => {
 //       if (e.which === 13) {
 //         acTag.focus();
 //         window.scrollTo({
-//           top: 0,
+//           top: distance,
 //           left: 0,
 //           behavior: 'smooth',
 //         });
@@ -1481,67 +1481,68 @@ addFile();
 // }
 // gotoCenter();
 
+
 // -----------------------------------------------------------------------
 // -----  無障礙快捷鍵盤組合 a11yKeyCode   ----------------------------------------------
 // -----------------------------------------------------------------------
 
-// function a11yKeyCode() {
-//   let search = document.querySelector('.webSearch input[type="text"]');
-//   let header = document.querySelector('.header .accessKey');
-//   let main = document.querySelector('.main .accessKey');
-//   let footer = document.querySelector('footer .accessKey');
-//   let distance = 0;
+function a11yKeyCode() {
+  let search = document.querySelector('.webSearch input[type="text"]');
+  let header = document.querySelector('.header .accessKey');
+  let main = document.querySelector('.main .accessKey');
+  let footer = document.querySelector('footer .accessKey');
+  let distance = 0;
 
-//   // --- focus element
-//   function focusElem(distance, el) {
-//     if (window.scrollY === distance) {
-//       el.focus();
-//     }
-//   }
+  // --- focus element
+  function focusElem(distance, el) {
+    if (window.scrollY === distance) {
+      el.focus();
+    }
+  }
 
-//   // --- scroll to element position
-//   function scrollAnime(distance, el) {
-//     window.scrollTo({
-//       top: distance,
-//       behavior: 'smooth',
-//     });
-//     window.addEventListener('scroll', () => {
-//       focusElem(distance, el);
-//     });
-//   }
+  // --- scroll to element position
+  function scrollAnime(distance, el) {
+    window.scrollTo({
+      top: distance,
+      behavior: 'smooth',
+    });
+    window.addEventListener('scroll', () => {
+      focusElem(distance, el);
+    });
+  }
 
-//   // --- click a11 button
-//   document.addEventListener('keydown', (e) => {
-//     switch (e.altKey && e.code) {
-//       // alt+S 查詢
-//       case true && 'KeyS':
-//         scrollAnime(0, search);
-//         focusElem(0, search);
-//         break;
-//       // --- alt+U header
-//       case true && 'KeyU':
-//         scrollAnime(0, header);
-//         focusElem(0, header);
-//         break;
-//       // --- alt+C 主要內容區
-//       case true && 'KeyC':
-//         main.focus();
-//         let _headerHeight = document.querySelector('header').offsetHeight;
-//         scrollAnime(_headerHeight, main);
-//         focusElem(_headerHeight, main);
-//         break;
-//       // --- alt+Z footer
-//       case true && 'KeyZ':
-//         let _bodyScrollHeight = document.documentElement.scrollHeight;
-//         let _bodyClientHeight = document.documentElement.clientHeight;
-//         let _distance = _bodyScrollHeight - _bodyClientHeight;
-//         scrollAnime(_distance, footer);
-//         focusElem(_distance, footer);
-//         break;
-//     }
-//   });
-// }
-// a11yKeyCode();
+  // --- click a11 button
+  document.addEventListener('keydown', (e) => {
+    switch (e.altKey && e.code) {
+      // alt+S 查詢
+      case true && 'KeyS':
+        scrollAnime(0, search);
+        focusElem(0, search);
+        break;
+      // --- alt+U header
+      case true && 'KeyU':
+        scrollAnime(0, header);
+        focusElem(0, header);
+        break;
+      // --- alt+C 主要內容區
+      case true && 'KeyC':
+        main.focus();
+        let _headerHeight = document.querySelector('header').offsetHeight;
+        scrollAnime(_headerHeight, main);
+        focusElem(_headerHeight, main);
+        break;
+      // --- alt+Z footer
+      case true && 'KeyZ':
+        let _bodyScrollHeight = document.documentElement.scrollHeight;
+        let _bodyClientHeight = document.documentElement.clientHeight;
+        let _distance = _bodyScrollHeight - _bodyClientHeight;
+        scrollAnime(_distance, footer);
+        focusElem(_distance, footer);
+        break;
+    }
+  });
+}
+a11yKeyCode();
 
 // -----------------------------------------------------------------------
 // -----  無障礙錨點切換語系   ----------------------------------------------
@@ -1581,32 +1582,32 @@ addFile();
 // -----   tableList樣式 加上 data-title   -------------------------------
 // -----------------------------------------------------------------------
 
-// function tableAddDataAttributes(obj) {
-//   window.addEventListener('load', function () {
-//     const el = document.querySelectorAll(obj.elemClass);
-//     el.forEach((i) => {
-//       const tableItem = i.querySelectorAll('table');
-//       tableItem.forEach((i) => {
-//         setTrAttr(i);
-//       });
-//       i.classList.add('loaded');
-//     });
-//     function setTrAttr(i) {
-//       const thList = i.querySelectorAll('th');
-//       const trList = i.querySelectorAll('tr');
-//       trList.forEach((trItem) => {
-//         const tdList = trItem.querySelectorAll('td');
-//         tdList.forEach((i, idx) => {
-//           tdList[idx].setAttribute(`data-${obj.dataName}`, `${thList[idx].textContent}`);
-//         });
-//       });
-//     }
-//   });
-// }
-// tableAddDataAttributes({
-//   elemClass: '.tableList',
-//   dataName: 'title',
-// }); // tableList樣式 加上 data-title
+function tableAddDataAttributes(obj) {
+  window.addEventListener('load', function () {
+    const el = document.querySelectorAll(obj.elemClass);
+    el.forEach((i) => {
+      const tableItem = i.querySelectorAll('table');
+      tableItem.forEach((i) => {
+        setTrAttr(i);
+      });
+      i.classList.add('loaded');
+    });
+    function setTrAttr(i) {
+      const thList = i.querySelectorAll('th');
+      const trList = i.querySelectorAll('tr');
+      trList.forEach((trItem) => {
+        const tdList = trItem.querySelectorAll('td');
+        tdList.forEach((i, idx) => {
+          tdList[idx].setAttribute(`data-${obj.dataName}`, `${thList[idx].textContent}`);
+        });
+      });
+    }
+  });
+}
+tableAddDataAttributes({
+  elemClass: '.tableList',
+  dataName: 'title',
+}); // tableList樣式 加上 data-title
 
 // -----------------------------------------------------------------------
 // -----   scrollTables   ------------------------------------------------

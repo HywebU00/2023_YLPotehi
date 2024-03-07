@@ -36,10 +36,41 @@
       mpHeader.classList.add("Blur");
     } else {
       mpMultiBar.classList.remove("Show");
-      mpHeader.classList.remove("Blur");
+      mpHeader.classList.remove("Blur");  
     }
   });
 
+  // --------------------------------------------- multiBar 導盲磚 focus時，crlPanel add .Show
+  const aUElement = document.getElementById('aU');
+  const multiBarElement = document.querySelector('.multiBar');
+  const mainMenuWrapElement = document.querySelector('.mainMenuWrap');
+  const communityLinkElement = document.querySelector('.communityLink');
+  const btnMenuElement = document.querySelector('.btnMenu');
+  const lastLinkInCommunityLink = communityLinkElement.querySelector('li:last-child a');
+
+  aUElement.addEventListener('focus', function() {
+    // #aU 获得焦点时，添加 .Show 类
+    multiBarElement.classList.add('Show');
+    mpHeader.classList.add("Blur");
+  });
+  document.addEventListener('keydown', function(event) {
+    // 检查键盘事件的键码是否是 Tab 键
+    if (event.key === 'Tab') {
+      // 如果焦点在 .communityLink 范围内
+      if (communityLinkElement.contains(document.activeElement)) {
+        // 如果焦点在 .communityLink 的最后一个 li a 上，移除 .Show 类
+        if (document.activeElement === lastLinkInCommunityLink) {
+          mainMenuWrapElement.classList.remove('Show');
+          btnMenuElement.classList.remove('Close');
+        } else {
+          // 否则保持 .Show 类
+          mainMenuWrapElement.classList.add('Show');
+        }
+      }
+    }
+  });
+
+  // --------------------------------------------- search
   // --------------------------------------------- btnMenu 各種開啟狀態的調整
   // ★★★ Note ★★★ multiBar Show ＋ mainMenuWrap Show 
   if (mpMultiBar.classList.contains('Show') && mainMenuWrap.classList.contains('Show')) {
