@@ -7517,7 +7517,7 @@ img {
     right: 0;
     top: 50%;
     background: #222;
-    padding: 1.25em 4em;
+    padding: 2.125em 4em;
     color: #fff;
     font-size: 1.25em;
     line-height: 1.6;
@@ -7559,6 +7559,15 @@ img {
   }
   .memberItem a:hover img, .memberItem a:focus-visible img {
     max-width: 120% !important;
+  }
+  @media screen and (max-width: 767px) {
+    .memberItem a {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+    .memberItem a:nth-child(odd) {
+      margin-right: 0;
+    }
   }
   .loginPanel {
     max-width: 940px;
