@@ -6860,11 +6860,13 @@ img {
   }
   .accordion ul li {
     margin-bottom: 0.5em;
+    line-height: 1.8;
   }
   .accordion ul li .accordionList {
     width: 100%;
     border: none;
     border-radius: 0;
+    font-weight: bold;
     display: block;
     text-align: left;
     background-color: #e2ded7;
@@ -6904,6 +6906,7 @@ img {
     overflow: hidden;
     display: none;
     opacity: 0;
+    line-height: 1.8;
     transition: 0.6s ease;
   }
   .accordion .accordionContent.Show {
@@ -6912,6 +6915,26 @@ img {
   }
   .accordion .accordionContent .content {
     padding: 2em;
+  }
+  .accordion .accordionContent .content a {
+    text-underline-offset: 8px;
+    position: relative;
+  }
+  .accordion .accordionContent .content a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    bottom: -2px;
+    transition: 0.3s;
+  }
+  .accordion .accordionContent .content a:hover, .accordion .accordionContent .content a:focus-visible {
+    padding-left: 0;
+    color: #d94771;
+  }
+  .accordion .accordionContent .content a:hover:before, .accordion .accordionContent .content a:focus-visible:before {
+    width: 0;
   }
   /* sitemap */
   .sitemap {
