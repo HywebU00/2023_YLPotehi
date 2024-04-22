@@ -6084,7 +6084,7 @@ img {
   .lp .list ol {
     list-style-type: none;
     padding: 0;
-    border-top: 2px solid #38b0af;
+    border-top: 2px solid #222;
   }
   .lp .list > ul > li,
   .lp .list ol > li {
@@ -6282,7 +6282,7 @@ img {
     border-color: #c9ae89;
     color: #3d3d3d;
     padding-left: 3.5em;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.25);
   }
   .submenu li a:hover:before, .submenu li a:focus-visible:before {
     right: 0;
@@ -6562,7 +6562,7 @@ img {
     position: relative;
     min-height: 1px;
     margin: 0;
-    padding: 0.6em 1.5em 0.6em 2.5em;
+    padding: 1em 1.5em 1em 3.5em;
     box-sizing: border-box;
     border-radius: 4px;
     background: #fff;
@@ -6572,14 +6572,12 @@ img {
     height: 40px;
   }
   .marquee .swiperBox .marquee-arrow {
-    padding: 0;
     position: absolute;
     cursor: pointer;
     left: 17px;
     z-index: 9;
     transform: rotate(90deg);
     padding: 0;
-    margin: 0;
     border: none;
   }
   .marquee .swiperBox .marquee-arrow::before {
@@ -6752,13 +6750,12 @@ img {
     }
   }
   *[class^=notice] {
-    padding: 0.5em 0;
+    padding: 0.75em 0;
     display: block;
     width: 100%;
     font-size: 0.938em;
     margin: 0.2em 0;
-    position: relative;
-    color: #666;
+    color: #333;
     position: relative;
     box-sizing: border-box;
     border-radius: 4px;
@@ -6766,12 +6763,12 @@ img {
   }
   *[class^=notice]:before {
     position: absolute;
-    top: 0.7em;
     left: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
-    vertical-align: middle;
-    width: 15px;
-    height: 15px;
+    width: 24px;
+    height: 25px;
     content: "";
   }
   *[class^=notice]:before img {
@@ -6779,59 +6776,54 @@ img {
   }
   *[class^=notice] a.close {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 24px;
+    height: 24px;
     top: 0.8em;
     right: 1em;
+    padding: 3px;
     display: block;
-    opacity: 0.5;
   }
   *[class^=notice] a.close:hover, *[class^=notice] a.close:focus-visible {
-    opacity: 1;
+    padding-left: 3px;
   }
   *[class^=notice] a.close img {
     display: block;
-    width: 12px;
-    height: 12px;
-    margin: 0;
+    width: 18px;
+    height: 18px;
   }
   *[class*=noticeInfo],
   *[class*=noticeSuccess],
   *[class*=noticeWarning],
   *[class*=noticeError] {
-    padding-left: 2.5em;
+    padding-left: 3em;
   }
   *[class*=noticeInfo] {
-    color: #00529b;
     background-color: #ceecfa;
   }
   *[class*=noticeInfo]:before {
     background: url(../images/basic/icon_info.svg) no-repeat center center;
-    background-size: 15px;
+    background-size: 18px;
   }
   *[class*=noticeSuccess] {
-    color: #3b7600;
     background-color: #dff2bf;
   }
   *[class*=noticeSuccess]:before {
     background: url(../images/basic/icon_success.svg) no-repeat center center;
-    background-size: 15px;
+    background-size: 18px;
   }
   *[class*=noticeWarning] {
-    color: #c23e00;
     background-color: #feefb3;
   }
   *[class*=noticeWarning]:before {
     background: url(../images/basic/icon_warning.svg) no-repeat center center;
-    background-size: 15px;
+    background-size: 18px;
   }
   *[class*=noticeError] {
-    color: #c40000;
-    background-color: #ffd2d2;
+    background-color: #ffe3e3;
   }
   *[class*=noticeError]:before {
     background: url(../images/basic/icon_error.svg) no-repeat center center;
-    background-size: 15px;
+    background-size: 18px;
   }
   .accordionTitle {
     padding-top: 90px;
@@ -6854,7 +6846,7 @@ img {
     font-weight: bold;
     display: block;
     text-align: left;
-    background-color: #e2ded7;
+    background: #e0d8cc;
     color: #333333;
     border-radius: 3px;
     text-decoration: none;
