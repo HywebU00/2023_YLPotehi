@@ -9458,6 +9458,12 @@ img {
     justify-content: center;
     margin: 3em 0;
   }
+  .cp ._clearFloat::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+  }
   .fileDownload {
     width: 100%;
     margin: 0 auto 2em;
