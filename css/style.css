@@ -1918,6 +1918,8 @@ img {
   .cp ol {
     font-size: 1em;
     margin: 2em 0;
+    padding: 0;
+    list-style-position: inside;
   }
   .cp ul li,
   .cp ol li {
@@ -6088,7 +6090,7 @@ img {
   }
   .lp .list > ul > li,
   .lp .list ol > li {
-    padding: 3em 0;
+    padding: 2em 0;
     border-bottom: 1px solid #d9c6ac;
     position: relative;
   }
@@ -6341,7 +6343,7 @@ img {
     height: 1px;
     background: #333333;
   }
-  .thumbnail h4 {
+  .thumbnail h3 {
     font-weight: 500;
     font-size: 24px;
     line-height: 48px;
@@ -6854,12 +6856,23 @@ img {
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     position: relative;
   }
   .accordion ul li .accordionList b {
     flex: 0 0 50px;
     align-self: center;
     font-weight: bold;
+  }
+  .accordion ul li .accordionList span {
+    flex: 0 0 auto;
+    padding: 4px 16px;
+    margin-right: 12px;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .accordion ul li .accordionList p {
+    margin: 0;
   }
   .accordion ul li .accordionList:before {
     content: "";
@@ -7229,19 +7242,19 @@ img {
   .main h2 {
     line-height: 1.25em;
   }
-  .mp h3.mainTitle {
+  .mp h2.mainTitle {
     font-weight: 100;
     font-size: 6.25em;
     line-height: 145px;
     display: inline-block;
     text-align: center;
   }
-  .mp h3.mainTitle span {
+  .mp h2.mainTitle span {
     display: block;
     font-size: 1.75rem;
     line-height: 3;
   }
-  .mp h4 {
+  .mp h3 {
     font-weight: 500;
     font-size: 24px;
     line-height: 48px;
@@ -7251,8 +7264,8 @@ img {
     font-size: 1em;
     line-height: 32px;
   }
-  .mp .mainInfoWrap h4,
-  .mp .infoSlider h4 {
+  .mp .mainInfoWrap h3,
+  .mp .infoSlider h3 {
     margin-bottom: 10px;
     overflow: hidden;
     display: -webkit-box;
@@ -8681,7 +8694,8 @@ img {
   .heroArea {
     position: relative;
   }
-  .heroArea .slogen {
+  .heroArea h1.slogen {
+    margin: 0;
     position: absolute;
     left: 50%;
     top: 50%;
