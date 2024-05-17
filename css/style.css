@@ -6157,7 +6157,6 @@ img {
   }
   .lp .list.type2 li .info a {
     display: block;
-    padding: 1em 0;
     font-size: 110%;
     line-height: 1.6;
     color: #222;
@@ -6182,11 +6181,23 @@ img {
     height: 10px;
     background: #222;
   }
-  .lp .list.type2 li .info .dept {
+  .lp .list.type2 li .info .state {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  .lp .list.type2 li .info .state .dept:first-child,
+  .lp .list.type2 li .info .state time:first-child,
+  .lp .list.type2 li .info .state .site:first-child {
     padding-left: 0;
+  }
+  .lp .list.type2 li .info .state .dept:last-child::after,
+  .lp .list.type2 li .info .state time:last-child::after,
+  .lp .list.type2 li .info .state .site:last-child::after {
+    display: none;
   }
   .lp .list.type2 li .info .download {
     display: flex;
+    margin-top: 1em;
   }
   .lp .list.type2 li .info .download a {
     flex: 0 0 auto;
