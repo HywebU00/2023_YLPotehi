@@ -6159,10 +6159,12 @@ img {
     display: block;
     font-size: 110%;
     line-height: 1.6;
+    font-weight: bold;
     color: #222;
   }
   .lp .list.type2 li .info a:hover, .lp .list.type2 li .info a:focus-visible {
     color: #8d6c41;
+    padding-left: 0;
   }
   .lp .list.type2 li .info time, .lp .list.type2 li .info .dept, .lp .list.type2 li .info .site {
     display: inline-block;
@@ -6203,9 +6205,10 @@ img {
     flex: 0 0 auto;
     color: #fff;
     background: #666;
-    padding: 6px 1em;
+    padding: 4px 1.25em;
     margin: 0 4px;
-    font-size: 100%;
+    font-size: 92%;
+    font-weight: normal;
     border-radius: 3px;
   }
   .lp .list.type2 li .info .download a:hover, .lp .list.type2 li .info .download a:focus-visible {
