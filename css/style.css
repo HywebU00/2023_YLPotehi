@@ -4446,7 +4446,7 @@ img {
     font-size: 1.25em;
     padding: 0.5em 0px;
     box-sizing: border-box;
-    border-bottom: 2px solid #828282;
+    border-bottom: 2px solid #222;
   }
   .fatFooter nav ul li > a:hover {
     box-shadow: none;
