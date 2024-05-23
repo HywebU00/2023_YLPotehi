@@ -6313,10 +6313,9 @@ img {
   }
   .thumbnail .col {
     flex: 0 0 42%;
-    margin-bottom: 8%;
   }
   .thumbnail .col:nth-child(even) {
-    margin-top: 13%;
+    margin-top: 4.5%;
   }
   .thumbnail .col a {
     display: block;
@@ -6440,6 +6439,12 @@ img {
     margin-right: 5px;
     background: url(../images/basic/icon_time.svg) no-repeat center center;
     background-size: 12px;
+  }
+  .functionPanel h2.title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-width: 100px;
   }
   div.function {
     box-sizing: border-box;
@@ -6634,7 +6639,7 @@ img {
     color: #7cb52f;
   }
   .pagination {
-    margin: 3em auto;
+    margin: 5em auto 3em;
     padding: 0;
     display: block;
     text-align: center;
@@ -8426,6 +8431,7 @@ img {
   }
   .imgContainer.mask {
     position: relative;
+    height: 360px;
     overflow: hidden;
   }
   .imgContainer.mask:before {
