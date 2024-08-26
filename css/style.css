@@ -7318,6 +7318,12 @@ img {
       font-size: 3.6em;
     }
   }
+  @media screen and (max-width: 767px) {
+    .mp h2.mainTitle {
+      font-size: 4.2em;
+      text-align: left;
+    }
+  }
   .showType {
     display: flex;
     margin: 2em 0;
@@ -8539,6 +8545,10 @@ img {
   .linkIcon .col a i {
     display: block;
     filter: invert(1);
+  }
+  .linkIcon .col a i img {
+    width: 54px;
+    height: 54px;
   }
   .linkIcon .col a:hover img, .linkIcon .col a:focus-visible img {
     transform: scale(1) !important;
