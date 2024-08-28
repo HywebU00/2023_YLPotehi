@@ -74,22 +74,66 @@ scrollTables('table');  // table捲動功能
 
   // --------------------------------------------- btnMenu 手機版開合（全站共用）
   // ★★★ Note ★★★ 手機版、主選單第二層開啟、收合
-  const firstMenus = document.querySelectorAll('.menu > ul > li');
+  // const firstMenus = document.querySelectorAll('.menu > ul > li');
 
+  // for (let i = 0; i < firstMenus.length; i++) {
+  //   const firstMenu = firstMenus[i];
+  //   const secondMenu = firstMenu.querySelector('.second-menu');
+  //   firstMenu.addEventListener('click', function() {
+  //     // 加上 .act，移除其他第一層選單的 .act
+  //     for (let j = 0; j < firstMenus.length; j++) {
+  //       if (firstMenus[j] === firstMenu) {
+  //         firstMenu.classList.add('act');
+  //       } else {
+  //         firstMenus[j].classList.remove('act');
+  //       }
+  //     }
+  //   });
+  // }
+  
+  const firstMenus = document.querySelectorAll('.menu > ul > li');
   for (let i = 0; i < firstMenus.length; i++) {
     const firstMenu = firstMenus[i];
     const secondMenu = firstMenu.querySelector('.second-menu');
+    
     firstMenu.addEventListener('click', function() {
-      // 加上 .act，移除其他第一層選單的 .act
-      for (let j = 0; j < firstMenus.length; j++) {
-        if (firstMenus[j] === firstMenu) {
-          firstMenu.classList.add('act');
-        } else {
+      if (firstMenu.classList.contains('act')) {
+        // 如果當前項目已經有 .act，則移除它
+        firstMenu.classList.remove('act');
+      } else {
+        // 如果當前項目沒有 .act，則先移除其他項目的 .act，再加上 .act
+        for (let j = 0; j < firstMenus.length; j++) {
           firstMenus[j].classList.remove('act');
         }
+        firstMenu.classList.add('act');
       }
     });
   }
+
+  // --------------------------------------------- btnMenu 手機版第一層連結失效
+  function toggleMenuLinks() {
+    // 取得所有 .menu > ul > li > a 的連結元素
+    const firstLevelLinks = document.querySelectorAll('.menu > ul > li > a');
+    if (window.innerWidth < 768) {
+      // 小於768px時，停用第一層的連結點擊
+      firstLevelLinks.forEach(function(link) {
+        link.addEventListener('click', disableLink);
+      });
+    } else {
+      // 大於等於768px時，啟用第一層的連結點擊
+      firstLevelLinks.forEach(function(link) {
+        link.removeEventListener('click', disableLink);
+      });
+    }
+  }
+  function disableLink(event) {
+    event.preventDefault(); // 阻止連結的預設點擊行為
+  }
+  // 初次加載時運行一次
+  toggleMenuLinks();
+  // 監聽視窗大小變化，動態啟用或停用連結
+  window.addEventListener('resize', toggleMenuLinks);
+
 
   // -----------------------------------------------------------------------
   // -----  gotoCenter on focus跳到 content   ------------------------------
