@@ -1980,6 +1980,13 @@ img {
       display: none;
     }
   }
+  a.accessKey {
+    opacity: 0.1;
+  }
+  a.accessKey:hover, a.accessKey:focus-visible {
+    opacity: 1;
+    padding-left: 0 !important;
+  }
   a.goCenter {
     position: absolute;
     top: -2.2em;
