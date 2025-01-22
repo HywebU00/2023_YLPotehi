@@ -3831,6 +3831,7 @@ img {
   }
   .header {
     position: fixed;
+    top: 0;
     z-index: 998;
     width: 100%;
     -webkit-backdrop-filter: blur(6px);
@@ -8599,6 +8600,58 @@ img {
     display: flex;
     flex-direction: row-reverse;
   }
+  .topMessage {
+    background: #ffeedd;
+  }
+  .topMessage + .topMessage {
+    border-top: 2px dotted #fff;
+  }
+  .topMessage p {
+    margin: 0;
+  }
+  .topMessage button.btn_close {
+    font-size: 0;
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: none;
+    position: relative;
+  }
+  .topMessage button.btn_close::before, .topMessage button.btn_close::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 28px;
+    height: 2px;
+    background: #222;
+    transform-origin: center;
+  }
+  .topMessage button.btn_close::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .topMessage button.btn_close::after {
+    transform: translateX(-50%) rotate(135deg);
+  }
+  .topMessage .wrapInfo {
+    max-width: 1440px;
+    margin: auto;
+    padding: 16px 0 16px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../images/icon_info.svg) left 50% no-repeat;
+    background-size: 36px;
+  }
+  .topMessage .wrapInfo + .wrapInfo {
+    border-top: 2px dotted #fff;
+  }
+  @media screen and (max-width: 1440px) {
+    .topMessage .wrapInfo {
+      margin: auto 1em;
+    }
+  }
   .mainMenuWrap .container {
     width: 80%;
     max-width: 1440px;
@@ -8639,7 +8692,11 @@ img {
   ul.communityLink li a.iconCalendarAdd {
     background: url(../images/icon_calendarAdd.svg);
   }
-  ul.communityLink li a.iconFilter, ul.communityLink li a.iconSetting, ul.communityLink li a.iconBack, ul.communityLink li a.iconFB, ul.communityLink li a.iconIG, ul.communityLink li a.iconYT, ul.communityLink li a.icoLine, ul.communityLink li a.icoPrint, ul.communityLink li a.iconMailTo, ul.communityLink li a.iconCalendarAdd {
+  ul.communityLink li a.iconLogout {
+    background: url(../images/icon_logout.svg);
+    background-size: 26px 26px !important;
+  }
+  ul.communityLink li a.iconFilter, ul.communityLink li a.iconSetting, ul.communityLink li a.iconBack, ul.communityLink li a.iconFB, ul.communityLink li a.iconIG, ul.communityLink li a.iconYT, ul.communityLink li a.icoLine, ul.communityLink li a.icoPrint, ul.communityLink li a.iconMailTo, ul.communityLink li a.iconCalendarAdd, ul.communityLink li a.iconLogout {
     display: block;
     width: 60px;
     height: 60px;
@@ -8683,7 +8740,10 @@ img {
   ul.communityLink li a:hover.iconCalendarAdd, ul.communityLink li a:focus-visible.iconCalendarAdd {
     background: url(../images/icon_calendarAdd.svg) #fff;
   }
-  ul.communityLink li a:hover.iconFilter, ul.communityLink li a:hover.iconSetting, ul.communityLink li a:hover.iconBack, ul.communityLink li a:hover.iconFB, ul.communityLink li a:hover.iconIG, ul.communityLink li a:hover.iconYT, ul.communityLink li a:hover.icoLine, ul.communityLink li a:hover.icoPrint, ul.communityLink li a:hover.iconMailTo, ul.communityLink li a:hover.iconCalendarAdd, ul.communityLink li a:focus-visible.iconFilter, ul.communityLink li a:focus-visible.iconSetting, ul.communityLink li a:focus-visible.iconBack, ul.communityLink li a:focus-visible.iconFB, ul.communityLink li a:focus-visible.iconIG, ul.communityLink li a:focus-visible.iconYT, ul.communityLink li a:focus-visible.icoLine, ul.communityLink li a:focus-visible.icoPrint, ul.communityLink li a:focus-visible.iconMailTo, ul.communityLink li a:focus-visible.iconCalendarAdd {
+  ul.communityLink li a:hover.iconLogout, ul.communityLink li a:focus-visible.iconLogout {
+    background: url(../images/icon_logout.svg) #fff;
+  }
+  ul.communityLink li a:hover.iconFilter, ul.communityLink li a:hover.iconSetting, ul.communityLink li a:hover.iconBack, ul.communityLink li a:hover.iconFB, ul.communityLink li a:hover.iconIG, ul.communityLink li a:hover.iconYT, ul.communityLink li a:hover.icoLine, ul.communityLink li a:hover.icoPrint, ul.communityLink li a:hover.iconMailTo, ul.communityLink li a:hover.iconCalendarAdd, ul.communityLink li a:hover.iconLogout, ul.communityLink li a:focus-visible.iconFilter, ul.communityLink li a:focus-visible.iconSetting, ul.communityLink li a:focus-visible.iconBack, ul.communityLink li a:focus-visible.iconFB, ul.communityLink li a:focus-visible.iconIG, ul.communityLink li a:focus-visible.iconYT, ul.communityLink li a:focus-visible.icoLine, ul.communityLink li a:focus-visible.icoPrint, ul.communityLink li a:focus-visible.iconMailTo, ul.communityLink li a:focus-visible.iconCalendarAdd, ul.communityLink li a:focus-visible.iconLogout {
     filter: invert(1);
     background-position: 50% 50%;
     background-repeat: no-repeat;

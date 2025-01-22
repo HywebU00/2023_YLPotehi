@@ -20,6 +20,17 @@
   <body>
     <!-- 直接跳主內容區 -->
     <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
+    <!-- message -->
+    <div class="topMessage">
+      <div class="wrapInfo">
+        <p>台電提醒電費未繳簡訊「不會提供網址要求用戶繳費」</p>
+        <button class="btn_close">關閉訊息</button>
+      </div>
+      <div class="wrapInfo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, temporibus. Voluptatem nam necessitatibus laborum rerum neque fugit, dolorum quae obcaecati ipsum quidem praesentium placeat officia iusto ab. Eaque, sint repellendus?</p>
+        <button class="btn_close">關閉訊息</button>
+      </div>
+    </div>
     <!-- wrapper Start -->
     <div class="wrapper mp">
       <!-- header Start -->
@@ -671,5 +682,51 @@
     <!-- js -->
     <script src="js/customize.js"></script>
     <script src="js/customize-mp.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header');
+        const topMessage = document.querySelector('.topMessage');
+        let previousScrollY = window.scrollY;
+
+        // 更新 header 的 top 值
+        function updateHeaderTop() {
+          if (topMessage && header) {
+            const topMessageHeight = topMessage.offsetHeight;
+            header.style.top = `${topMessageHeight}px`;
+          }
+        }
+
+        // 初始化時更新高度
+        updateHeaderTop();
+
+        // 點擊關閉按鈕時，移除 .wrapInfo 並更新高度
+        document.querySelectorAll('.topMessage .btn_close').forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const wrapInfo = this.closest('.wrapInfo');
+            if (wrapInfo) {
+              wrapInfo.remove();
+              updateHeaderTop(); // 更新高度
+            }
+          });
+        });
+
+        // 滾動事件監聽
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > previousScrollY) {
+            // 向下滾動：header 的 top 逐漸遞減至 0
+            header.style.top = `${Math.max(parseInt(header.style.top || 0) - 5, 0)}px`;
+          } else {
+            // 向上滾動：header 的 top 恢復到 .topMessage 的高度
+            const topMessageHeight = topMessage.offsetHeight;
+            if (header.style.top < `${topMessageHeight}px`) {
+              header.style.top = `${topMessageHeight}px`;
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

@@ -4,6 +4,21 @@
 
   const btnMenu = document.querySelector('.btnMenu');
 
+  // --------------------------------------------- topMessage
+  // 選取所有 .topMessage 並逐一處理
+  // 為所有 .btn_close 添加點擊事件
+  document.querySelectorAll('.wrapInfo .btn_close').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // 獲取該按鈕所在的 .wrapInfo 元素
+        const wrapInfo = this.closest('.wrapInfo');
+        if (wrapInfo) {
+            // 隱藏該 .wrapInfo
+            wrapInfo.style.display = 'none';
+        }
+    });
+  });
+
+
   // --------------------------------------------- heroImg
   // ★★★ Note ★★★ 偵聽視窗高度，並將高度投入 HTML
   const heightDisplay = document.getElementById('heroImg');  // 獲取用於顯示高度的HTML元素
