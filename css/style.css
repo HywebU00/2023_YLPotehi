@@ -8615,6 +8615,7 @@ img {
     width: 42px;
     height: 42px;
     background: transparent;
+    border-radius: 50%;
     border: none;
     position: relative;
   }
@@ -8633,6 +8634,12 @@ img {
   }
   .topMessage button.btn_close::after {
     transform: translateX(-50%) rotate(135deg);
+  }
+  .topMessage button.btn_close:hover, .topMessage button.btn_close:focus-visible {
+    background: #c6701a;
+  }
+  .topMessage button.btn_close:hover::before, .topMessage button.btn_close:hover::after, .topMessage button.btn_close:focus-visible::before, .topMessage button.btn_close:focus-visible::after {
+    background: #fff;
   }
   .topMessage .wrapInfo {
     max-width: 1440px;
